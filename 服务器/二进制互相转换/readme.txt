@@ -1,0 +1,1 @@
+java -jar /Users/pc/Documents/code/awhjCode/服务器/二进制互相转换/demo-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev

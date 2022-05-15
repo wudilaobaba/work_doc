@@ -1,0 +1,34 @@
+1.项目中使用了.less/.vue/.png等文件作为模块，要实现打包，必须用对应的文件加载器加载上述文件
+    less-loader:
+        先将.less文件通过less-loader加载为css文件，然后将.css通过css-loader加载为css模块，最后通过style-loader将css内容放在页面的style标签中
+    vue-loader:
+        经网上查找，需要将.vue文件使用vue-loader进行加载，同时必须配合以下插件使用：
+        const VueLoaderPlugin = require('vue-loader/lib/plugin');
+    css-loader:
+        主要用来加载.vue文件中，style标签中的css代码
+    file-loader:
+        该项目中主要用来加载图片文件   
+        
+        
+2. 配置sourceMap，方便调试使用
+    devtool:'cheap-module-eval-source-map' //开发环境
+    devtool:'none' //生产环境
+    
+3.由于vue项目运行时，需要一个id为"app"的DOM元素，我在项目vue-app-base的src下增加了一个用于生成html的模板文件，里面增加了<div id="app"></div>
+    利用插件，生成了一个html入口文件
+        new HtmlWebpackPlugin({
+          template: './src/template/index.html'
+        }),
+
+4.根据环境，将项目做不同的配置
+    开发环境，配置模块热更新,使用dev-server做静态文件资源内存中输出
+    生产环境，将静态资源进行拷贝至输出目录
+
+5.项目运行命令：
+	
+"scripts": {
+    "serve": "webpack-dev-server --config webpack.dev.js --open",
+    "build": "webpack --config webpack.prod.js",
+    "lint": "echo \"请使用 ESLint 实现此任务\""
+  }
+	

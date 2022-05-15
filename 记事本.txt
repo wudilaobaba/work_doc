@@ -1,0 +1,48 @@
+
+Resources :拿到用户的xml文件
+
+Configuration：DataSource 以及 Map<String,MappedStatement>
+
+Map<String,MappedStatement>就是用户提供的xml文件中所有的复合要求的配置信息
+
+SqlSessionFactoryBuilder: 通过xml文件创造出SqlSessionFactory
+
+SqlSessionFactory：有Configuration属性 以及 创造SqlSession的方法
+
+SqlSession：有Configuration属性以及selectList selectOne两个方法
+
+
+最后：要写一个用户使用文档
+
+
+xianglewfx@gmail.com
+
+
+
+code10
+
+tl559992@gmail.com
+
+
+
+Node was installed at
+
+   /usr/local/bin/node
+
+npm was installed at
+
+   /usr/local/bin/npm
+
+Make sure that /usr/local/bin is in your $PATH.
+
+
+
+建议全局包都用npx
+
+tl559992@gmail.com
+
+
+
+
+
+

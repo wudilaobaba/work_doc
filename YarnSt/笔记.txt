@@ -1,0 +1,74 @@
+建议不要用npm来安装yarn！！！！！！！！！！！！！！！！！！！！！！！！！！
+网上搜索yarn的安装包进行安装！！！！！！！！！！！！！！！！！
+
+yarn init  创建一个带有package.json的项目
+
+yarn add webpack  项目中安装webpack
+
+yarn upgrade webpack   更新项目中的包
+yarn upgrade webpack@1.0.0  跟新包为指定的版本
+
+yarn remove xxx  卸载包
+
+yarn add webpack --offline   项目中必须有yarn.lock文件才可以离线安装
+
+yarn publish 将项目发布到npm中
+
+
+在项目中直接运行yarn install 或 yarn 即可安装package.json中的所有依赖
+yarn install --force 强制去网络上获取包
+yarn install --production  强制只安装packege.json中的"dependencies"下的包
+
+yarn add xxxxx
+yarn add --dev  xxxxx              or         yarn add xxxxx -D
+yarn add --peer xxxxx              or         yarn add xxxxx -P     发布时候用的，基本用不上
+yarn add --optional  xxx           or         yarn add xxxxx -O    备用的
+更多add的参数请看：https://yarn.bootcss.com/docs/cli/add/
+
+
+尽量不要把yarn.lock和package.json放在.gitignore中
+
+
+
+yarn cache clean  清除本地所有的包
+ 获取yarn和npm的信息
+
+将yarn的镜像设置为淘宝的：
+yarn config set registry registry.npm.taobao.org
+
+
+安装yarn后，记得修改以下三处：！！！！！！！
+
+yarn全局包：
+    yarn global add  xxx      // 安装好以后的node_modules在 C:/Users/wb-whj451236/AppData/Local/Yarn/config/global 中
+    yarn global remove  xxx  // 卸载全局包
+    yarn global bin  获取yarn全局安装的包的命令行文件位置： 
+        001修改、
+             yarn config  set global-folder "D:\Yarn\data\global"
+             到C盘用户目录下找到 .yarnrc文件，将里面的global-folder改为 --global-folder
+             然后再执行一遍：yarn config  set global-folder "D:\Yarn\data\global"
+             将上面的路径D:\Yarn\data\global\node_modules\.bin 添加到环境变量，即可执行由yarn安装的命令工具了
+        002、修改yarn global bin的二进制文件路径： yarn config set prefix "D:\Yarn\data"
+
+yarn缓存相关：
+       003、修改缓存路径  yarn config set cache-folder "D:\Yarn\data\cache"   
+    yarn cache dir  获取yarn全局缓存包的路径
+    yarn cache list 列出电脑里所有yarn缓存的包
+    yarn cache clean  清除所有yarn缓存的包    D:\dev\yarn\cache  就会被清空
+
+yarn config list
+
+yarn info 包名  获取到该包的所有信息
+
+du -h --max-depth=0  查看当前文件夹大小
+du -h --max-depth=1 文件夹下面各个文件和文件夹大小
+
+删除除了文件夹a、b以外的所有文件夹
+shopt -s extglob
+rm -r !(a|b)
+
+
+查看yarn安装的全局包：yarn global list
+查看npm安装的全局包：npm list -g --depth 0
+
+

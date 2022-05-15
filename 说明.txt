@@ -1,0 +1,28 @@
+命令行执行： vim ~/.bash_profile
+所有的环境变量都保存在这里
+环境变量添加完成后，一定要执行：
+source $HOME/.bash_profile
+
+
+
+
+所有的npm下载的包都保存在这里：
+/usr/local/bin
+npm安装全局命令的时候要加上sudo 如：sudo npm i -g typescript
+
+
+mac使用homebrew可以下载包，同时自动放到环境变量中，如：
+安装：brew install maven
+升级：brew upgrade maven
+
+命令：
+查看本机所有java版本所在的目录
+/usr/libexec/java_home -V
+
+
+
+删除github上的项目：
+https://jingyan.baidu.com/article/2fb0ba4084070900f2ec5f1c.html
+
+删除git项目中的文件：git rm xx.js
+删除git项目中的文件夹：git rm -r day01
